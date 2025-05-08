@@ -69,7 +69,7 @@ dotnet build -t:Run -f net8.0-ios
 dotnet publish -c Release -f net8.0-ios /p:ArchiveOnBuild=true
 ```
 
-A browser/tab should open on **[http://127.0.0.1:9696/](http://127.0.0.1:9696/)** and show *“Hello from EmbedIO 4 in MAUI!”*.
+A browser/tab should open on **[http://127.0.0.1:9696/](http://127.0.0.1:9696/)** and show *“EmbedIO”*.
 
 ---
 
@@ -79,8 +79,7 @@ A browser/tab should open on **[http://127.0.0.1:9696/](http://127.0.0.1:9696/)*
 | ---------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
 | **Mac Catalyst** | `Platforms/MacCatalyst/Entitlements.plist` | `com.apple.security.network.server` + `com.apple.security.network.client`                                             |
 |                  | `Platforms/MacCatalyst/Info.plist`         | `NSLocalNetworkUsageDescription` string                                                                               |
-| **iOS**          | `Platforms/iOS/Entitlements.plist`         | Same keys as Catalyst                                                                                                 |
-|                  | `Platforms/iOS/Info.plist`                 | Same `NSLocalNetworkUsageDescription`                                                                                 |
+| **iOS**          | `Platforms/iOS/Info.plist`                 | Same `NSLocalNetworkUsageDescription`                                                                                 |
 | **Android**      | `Platforms/Android/AndroidManifest.xml`    | `<uses-permission android:name="android.permission.INTERNET"/>` + `<application android:usesCleartextTraffic="true">` |
 
 **Important:** keep the listener bound to `127.0.0.1` only. Publishing an externally reachable daemon will fail App Store review.
